@@ -25,10 +25,10 @@ loginInput.addEventListener("keypress", (e) => {  //anti-cheat html
     e.preventDefault();
 })
 
-var twoSec = setInterval(function () {
+let twoSec = setInterval(function () {
     clearInterval(twoSec);
 
-    var sec = setInterval(function () {
+    setInterval(function () {
         timeLeft--;
         if (timeLeft < 0) {
             timeLeft = 40;
