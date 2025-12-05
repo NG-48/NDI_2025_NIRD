@@ -1,0 +1,274 @@
+/* ===== Variables globales ===== */
+:root {
+    --bg-color: #f3f4f6;
+    --primary-color: #4f46e5;
+    --secondary-color: #facc15;
+    --text-color: #111827;
+    --muted-color: #6b7280;
+    --input-bg: #ffffff;
+    --input-border: #d1d5db;
+    --key-bg: #e5e7eb;
+    --key-hover: #c7d2fe;
+    --timer-color: #dc2626;
+    --radius: 10px;
+    --gap: 12px;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ===== Global ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+/* ===== Header ===== */
+header {
+    padding: 16px 24px;
+    background: linear-gradient(90deg, #ffffff, #f9fafb);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Main ===== */
+main {
+    max-width: 900px;
+    margin: 32px auto;
+    padding: 0 16px;
+}
+
+main h1 {
+    font-size: 28px;
+    margin-bottom: 24px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+/* ===== Form ===== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    background-color: var(--input-bg);
+    padding: 24px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* ===== Input groups ===== */
+#login_div, #mdp_div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+input, select {
+    padding: 10px 12px;
+    border-radius: var(--radius);
+    border: 1px solid var(--input-border);
+    font-size: 16px;
+    outline: none;
+    background-color: var(--input-bg);
+    color: var(--text-color);
+}
+
+input:focus, select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+/* ===== Keyboard ===== */
+#keyboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.key {
+    padding: 10px 0;
+    background-color: var(--key-bg);
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.key:hover {
+    background-color: var(--key-hover);
+    transform: translateY(-2px);
+}
+
+/* ===== Timer ===== */
+#timer {
+    margin-top: 6px;
+    font-weight: 700;
+    color: var(--timer-color);
+    font-size: 18px;
+}
+
+/* ===== Email group sur 1 ligne ===== */
+#email_div {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    align-items: center;
+}
+
+#email_div > * {
+    display: inline-block; /* forcer enfants sur la même ligne */
+}
+
+#email_text {
+    flex: 2; /* prend plus de place */
+}
+
+#email_domain, #email_domain_text {
+    flex: 1; /* prennent moins de place */
+}
+
+/* ===== Age div sur 1 ligne ===== */
+#age_div {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start; /* aligne tout à gauche */
+    gap: 6px;
+}
+
+#age_div > * {
+    display: inline-block; /* force les enfants sur une seule ligne */
+    flex: 0; /* aucun stretch */
+}
+
+#age_div span {
+    white-space: nowrap;
+}
+
+#age_div button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: var(--radius);
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+#age_div button:hover {
+    background-color: #eab308;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    main h1 {
+        font-size: 22px;
+    }
+
+    #keyboard {
+        grid-template-columns: repeat(auto-fill, minmax(32px, 1fr));
+    }
+
+    input, select {
+        font-size: 14px;
+    }
+
+    #age_div button {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    #email_div, #age_div {
+        flex-wrap: wrap;
+    }
+
+    #email_text, #email_domain, #email_domain_text {
+        flex: 1 1 100%;
+    }
+
+    #age_div {
+        flex-wrap: wrap;
+    }
+}
+
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
+}
+
+
+/* ===== Intro / User list section ===== */
+#intro-section {
+    background-color: var(--input-bg);
+    padding: 24px;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 24px;
+}
+
+#intro-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+#intro-section p {
+    margin-bottom: 12px;
+    color: var(--text-color);
+}
+
+#user-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 12px 0;
+}
+
+.user-box {
+    background-color: #f9fafb;
+    padding: 10px 14px;
+    border-radius: var(--radius);
+    border: 1px solid var(--input-border);
+    font-size: 15px;
+}
+
+.rules {
+    margin-left: 18px;
+    color: var(--muted-color);
+    margin-bottom: 12px;
+}
+
+.goodluck {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-top: 8px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    #intro-section {
+        padding: 16px;
+    }
+    #intro-section h2 {
+        font-size: 20px;
+    }
+    .user-box {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="ressources/images/NDI_logo.png">
+        <title>NDI 2025 - NIRD</title>
+        <script defer type="text/javascript" src="ressources/js/hard_login/login.js"></script>
+        <script defer type="text/javascript" src="ressources/js/hard_login/password.js"></script>
+        <script defer type="text/javascript" src="ressources/js/hard_login/email.js"></script>
+        <script defer type="text/javascript" src="ressources/js/hard_login/age.js"></script>
+        <script defer type="text/javascript" src="ressources/js/hard_login/validate.js"></script>
+        <link rel="stylesheet" href="ressources/css/style.css" type="text/css">
+    </head>
+    <body>
+    <header>
+        <nav>
+        </nav>
+    </header>
+    <main>
+        <h1>Connexion manuelle</h1>
+
+        <section id="intro-section">
+    <h2>Présentation de cette démonstration</h2>
+
+    <p>
+        Cette page ne propose pas de réelle authentication. 
+        Cependant, vous pouvez relever un petit défi en essayant 
+        de vous connecter grâce au formulaire ci-dessous.
+    </p>
+
+    <p>
+        Voici les différents comptes disponibles, classés du plus simple 
+        au plus difficile :
+    </p>
+
+    <div id="user-list">
+        <div class="user-box">
+            <strong>zoe</strong> — zoe@example.com — planet77 — âge 20
+        </div>
+        <div class="user-box">
+            <strong>chloe</strong> — chleo@mail.com — rock5 — âge 30
+        </div>
+        <div class="user-box">
+            <strong>martin</strong> — martin@domain.com — blue9 — âge 42
+        </div>
+        <div class="user-box">
+            <strong>christ45</strong> — chris45@stuff.net — ember12 — âge 60
+        </div>
+        <div class="user-box">
+            <strong>maximilien</strong> — max3rd@random.org — wolf7 — âge 95
+        </div>
+    </div>
+
+    <p class="small-info">
+        La difficulté augmente en fonction :
+    </p>
+    <ul class="rules">
+        <li>de la longueur du login (plus long = plus difficile),</li>
+        <li>de la longueur du mot de passe (court = difficile),</li>
+        <li>de l’âge (à convertir lui-même depuis la base 16).</li>
+    </ul>
+
+    <p class="goodluck">Bonne chance !</p>
+</section>
+
+
+        <form id="Form" novalidate>
+            <div id="login_div">
+                <div id="keyboard"></div>
+                <label for="login">Login</label>
+                <input type="text" placeholder="Lebron James" id="login" readonly/>
+                <span id="timer" class="red"></span>
+            </div>
+            <div id="mdp_div">
+                <label for="password">Mot de passe</label>
+                <p>Pour votre sécurité, un autre mot de passe est affiché à l’écran. ce mot de passe doit être valide</p>
+                <input type="text" placeholder="abCD#1234" id="password" autocomplete="off" pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{1,2000}$/" minlength="6" maxlength="20"/>
+                <span id="pwdStatus" class="red"></span>
+            </div>
+            <label for="email_text">Email</label>
+            <p>Si votre domaine ne figure pas dans notre liste, vous pouvez en personnalisé un avec l'option de même nom</p>
+            <div id="email_div">
+                <input type="text" id="email_text" placeholder="alex.durant"> @
+                <select id="email_domain">
+                    <option value="valnorix.zzz">valnorix.zzz</option>
+                    <option value="tremilov.zzz">tremilov.zzz</option>
+                    <option value="braklena.zzz">braklena.zzz</option>
+                    <option value="sundravo.zzz">sundravo.zzz</option>
+                    <option value="kermavon.zzz">kermavon.zzz</option>
+                    <option value="zorlinka.zzz">zorlinka.zzz</option>
+                    <option value="frimolax.zzz">frimolax.zzz</option>
+                    <option value="derlanox.zzz">derlanox.zzz</option>
+                    <option value="mirlaven.zzz">mirlaven.zzz</option>
+                    <option value="heltranon.zzz">heltranon.zzz</option>
+                    <option value="volemari.zzz">volemari.zzz</option>
+                    <option value="xartelno.zzz">xartelno.zzz</option>
+                    <option value="pelnorix.zzz">pelnorix.zzz</option>
+                    <option value="grumetra.zzz">grumetra.zzz</option>
+                    <option value="felmino.zzz">felmino.zzz</option>
+                    <option value="lornetis.zzz">lornetis.zzz</option>
+                    <option value="drimavon.zzz">drimavon.zzz</option>
+                    <option value="mandroxi.zzz">mandroxi.zzz</option>
+                    <option value="sorliven.zzz">sorliven.zzz</option>
+                    <option value="kerstavo.zzz">kerstavo.zzz</option>
+                    <option value="flendavo.zzz">flendavo.zzz</option>
+                    <option value="tralmeko.zzz">tralmeko.zzz</option>
+                    <option value="yernavik.zzz">yernavik.zzz</option>
+                    <option value="balkreno.zzz">balkreno.zzz</option>
+                    <option value="germelon.zzz">germelon.zzz</option>
+                    <option value="zavlora.zzz">zavlora.zzz</option>
+                    <option value="mistenko.zzz">mistenko.zzz</option>
+                    <option value="salvrika.zzz">salvrika.zzz</option>
+                    <option value="jorvaten.zzz">jorvaten.zzz</option>
+                    <option value="plondrix.zzz">plondrix.zzz</option>
+                    <option value="ventralo.zzz">ventralo.zzz</option>
+                    <option value="darsinex.zzz">darsinex.zzz</option>
+                    <option value="molvenix.zzz">molvenix.zzz</option>
+                    <option value="telvaron.zzz">telvaron.zzz</option>
+                    <option value="selmarix.zzz">selmarix.zzz</option>
+                    <option value="grimelto.zzz">grimelto.zzz</option>
+                    <option value="flontera.zzz">flontera.zzz</option>
+                    <option value="zindromo.zzz">zindromo.zzz</option>
+                    <option value="kandrixo.zzz">kandrixo.zzz</option>
+                    <option value="rivoltra.zzz">rivoltra.zzz</option>
+                    <option value="molsenra.zzz">molsenra.zzz</option>
+                    <option value="tredanix.zzz">tredanix.zzz</option>
+                    <option value="gorlavix.zzz">gorlavix.zzz</option>
+                    <option value="salnirel.zzz">salnirel.zzz</option>
+                    <option value="lemsarix.zzz">lemsarix.zzz</option>
+                    <option value="trivonda.zzz">trivonda.zzz</option>
+                    <option value="fornelko.zzz">fornelko.zzz</option>
+                    <option value="belmaren.zzz">belmaren.zzz</option>
+                    <option value="sornelix.zzz">sornelix.zzz</option>
+                    <option value="maverlon.zzz">maverlon.zzz</option>
+                    <option value="xoldrena.zzz">xoldrena.zzz</option>
+                    <option value="panverix.zzz">panverix.zzz</option>
+                    <option value="rektalon.zzz">rektalon.zzz</option>
+                    <option value="gronveta.zzz">gronveta.zzz</option>
+                    <option value="yelmorin.zzz">yelmorin.zzz</option>
+                    <option value="linsarto.zzz">linsarto.zzz</option>
+                    <option value="dorlaven.zzz">dorlaven.zzz</option>
+                    <option value="meltarix.zzz">meltarix.zzz</option>
+                    <option value="frenvalo.zzz">frenvalo.zzz</option>
+                    <option value="zandriver.zzz">zandriver.zzz</option>
+                    <option value="beltramor.zzz">beltramor.zzz</option>
+                    <option value="kolstera.zzz">kolstera.zzz</option>
+                    <option value="frendilo.zzz">frendilo.zzz</option>
+                    <option value="seltrivan.zzz">seltrivan.zzz</option>
+                    <option value="pavmirex.zzz">pavmirex.zzz</option>
+                    <option value="dranelti.zzz">dranelti.zzz</option>
+                    <option value="kinvaron.zzz">kinvaron.zzz</option>
+                    <option value="forlindar.zzz">forlindar.zzz</option>
+                    <option value="zervolta.zzz">zervolta.zzz</option>
+                    <option value="kremalix.zzz">kremalix.zzz</option>
+                    <option value="halmorin.zzz">halmorin.zzz</option>
+                    <option value="gervalix.zzz">gervalix.zzz</option>
+                    <option value="tornilax.zzz">tornilax.zzz</option>
+                    <option value="dermlavo.zzz">dermlavo.zzz</option>
+                    <option value="yoltreni.zzz">yoltreni.zzz</option>
+                    <option value="sandrivo.zzz">sandrivo.zzz</option>
+                    <option value="polvarik.zzz">polvarik.zzz</option>
+                    <option value="kervindor.zzz">kervindor.zzz</option>
+                    <option value="julmerta.zzz">julmerta.zzz</option>
+                    <option value="fenloren.zzz">fenloren.zzz</option>
+                    <option value="bronteli.zzz">bronteli.zzz</option>
+                    <option value="zirmelon.zzz">zirmelon.zzz</option>
+                    <option value="gartlona.zzz">gartlona.zzz</option>
+                    <option value="misveron.zzz">misveron.zzz</option>
+                    <option value="valdriko.zzz">valdriko.zzz</option>
+                    <option value="donvarin.zzz">donvarin.zzz</option>
+                    <option value="sokireno.zzz">sokireno.zzz</option>
+                    <option value="kerlunda.zzz">kerlunda.zzz</option>
+                    <option value="molserin.zzz">molserin.zzz</option>
+                    <option value="torvelix.zzz">torvelix.zzz</option>
+                    <option value="fraltoni.zzz">fraltoni.zzz</option>
+                    <option value="verlanor.zzz">verlanor.zzz</option>
+                    <option value="sermikon.zzz">sermikon.zzz</option>
+                    <option value="jaltrima.zzz">jaltrima.zzz</option>
+                    <option value="hindrova.zzz">hindrova.zzz</option>
+                    <option value="plomelix.zzz">plomelix.zzz</option>
+                    <option value="grontiva.zzz">grontiva.zzz</option>
+                    <option value="zavnoril.zzz">zavnoril.zzz</option>
+                    <option value="rowmelix.zzz">rowmelix.zzz</option>
+                    <option value="pentlora.zzz">pentlora.zzz</option>
+                    <option value="trilvano.zzz">trilvano.zzz</option>
+                    <option value="domverik.zzz">domverik.zzz</option>
+                    <option value="senvalto.zzz">senvalto.zzz</option>
+                    <option value="grelvani.zzz">grelvani.zzz</option>
+                    <option value="meltriva.zzz">meltriva.zzz</option>
+                    <option value="blonteri.zzz">blonteri.zzz</option>
+                    <option value="firnlavo.zzz">firnlavo.zzz</option>
+                    <option value="hendriso.zzz">hendriso.zzz</option>
+                    <option value="kalvreno.zzz">kalvreno.zzz</option>
+                    <option value="grimoxel.zzz">grimoxel.zzz</option>
+                    <option value="lortavio.zzz">lortavio.zzz</option>
+                    <option value="zilmaren.zzz">zilmaren.zzz</option>
+                    <option value="xornelix.zzz">xornelix.zzz</option>
+                    <option value="jentavro.zzz">jentavro.zzz</option>
+                    <option value="mervokan.zzz">mervokan.zzz</option>
+                    <option value="boltriva.zzz">boltriva.zzz</option>
+                    <option value="nardelix.zzz">nardelix.zzz</option>
+                    <option value="fenstaro.zzz">fenstaro.zzz</option>
+                    <option value="torvanel.zzz">torvanel.zzz</option>
+                    <option value="kalnorin.zzz">kalnorin.zzz</option>
+                    <option value="seldrivo.zzz">seldrivo.zzz</option>
+                    <option value="granvexo.zzz">granvexo.zzz</option>
+                    <option value="hirtanova.zzz">hirtanova.zzz</option>
+                    <option value="pelnivor.zzz">pelnivor.zzz</option>
+                    <option value="lirsavon.zzz">lirsavon.zzz</option>
+                    <option value="gornetil.zzz">gornetil.zzz</option>
+                    <option value="valstromi.zzz">valstromi.zzz</option>
+                    <option value="kimsolar.zzz">kimsolar.zzz</option>
+                    <option value="melvoriq.zzz">melvoriq.zzz</option>
+                    <option value="zantriko.zzz">zantriko.zzz</option>
+                    <option value="trilfano.zzz">trilfano.zzz</option>
+                    <option value="dovlenix.zzz">dovlenix.zzz</option>
+                    <option value="yarnovik.zzz">yarnovik.zzz</option>
+                    <option value="felmaron.zzz">felmaron.zzz</option>
+                    <option value="kornisel.zzz">kornisel.zzz</option>
+                    <option value="maztrino.zzz">maztrino.zzz</option>
+                    <option value="vilmaret.zzz">vilmaret.zzz</option>
+                    <option value="fandrelk.zzz">fandrelk.zzz</option>
+                    <option value="zermikon.zzz">zermikon.zzz</option>
+                    <option value="grestalv.zzz">grestalv.zzz</option>
+                    <option value="halverto.zzz">halverto.zzz</option>
+                    <option value="karliven.zzz">karliven.zzz</option>
+                    <option value="vintarox.zzz">vintarox.zzz</option>
+                    <option value="serlanoz.zzz">serlanoz.zzz</option>
+                    <option value="rolmavex.zzz">rolmavex.zzz</option>
+                    <option value="meltrosa.zzz">meltrosa.zzz</option>
+                    <option value="samdorin.zzz">samdorin.zzz</option>
+                    <option value="beldriva.zzz">beldriva.zzz</option>
+                    <option value="tornavik.zzz">tornavik.zzz</option>
+                    <option value="krimavon.zzz">krimavon.zzz</option>
+                    <option value="pelnadro.zzz">pelnadro.zzz</option>
+                    <option value="zantrave.zzz">zantrave.zzz</option>
+                    <option value="melotrix.zzz">melotrix.zzz</option>
+                    <option value="firdelno.zzz">firdelno.zzz</option>
+                    <option value="harvinko.zzz">harvinko.zzz</option>
+                    <option value="soltreva.zzz">soltreva.zzz</option>
+                    <option value="fetermon.zzz">fetermon.zzz</option>
+                    <option value="gremstov.zzz">gremstov.zzz</option>
+                    <option value="linvaroq.zzz">linvaroq.zzz</option>
+                    <option value="zorneliv.zzz">zorneliv.zzz</option>
+                    <option value="jirnalox.zzz">jirnalox.zzz</option>
+                    <option value="bundarix.zzz">bundarix.zzz</option>
+                    <option value="santorim.zzz">santorim.zzz</option>
+                    <option value="gristavo.zzz">gristavo.zzz</option>
+                    <option value="pelmiron.zzz">pelmiron.zzz</option>
+                    <option value="zankoriv.zzz">zankoriv.zzz</option>
+                    <option value="frelmira.zzz">frelmira.zzz</option>
+                    <option value="merltani.zzz">merltani.zzz</option>
+                    <option value="barlento.zzz">barlento.zzz</option>
+                    <option value="zontrevi.zzz">zontrevi.zzz</option>
+                    <option value="trialvex.zzz">trialvex.zzz</option>
+                    <option value="romdalen.zzz">romdalen.zzz</option>
+                    <option value="felnivar.zzz">felnivar.zzz</option>
+                    <option value="harmetix.zzz">harmetix.zzz</option>
+                    <option value="vivlorex.zzz">vivlorex.zzz</option>
+                    <option value="treldova.zzz">treldova.zzz</option>
+                    <option value="milstaro.zzz">milstaro.zzz</option>
+                    <option value="zontravi.zzz">zontravi.zzz</option>
+                    <option value="frondire.zzz">frondire.zzz</option>
+                    <option value="kalmerix.zzz">kalmerix.zzz</option>
+                    <option value="zildarom.zzz">zildarom.zzz</option>
+                    <option value="kervilon.zzz">kervilon.zzz</option>
+                    <option value="forlanti.zzz">forlanti.zzz</option>
+                    <option value="barnovax.zzz">barnovax.zzz</option>
+                    <option value="maltrevo.zzz">maltrevo.zzz</option>
+                    <option value="gornetav.zzz">gornetav.zzz</option>
+                    <option value="neltrima.zzz">neltrima.zzz</option>
+                    <option value="varlixon.zzz">varlixon.zzz</option>
+                    <option value="drivonel.zzz">drivonel.zzz</option>
+                    <option value="fersital.zzz">fersital.zzz</option>
+                    <option value="jirvanto.zzz">jirvanto.zzz</option>
+                    <option value="kernivax.zzz">kernivax.zzz</option>
+                    <option value="velmaron.zzz">velmaron.zzz</option>
+                    <option value="jostrinx.zzz">jostrinx.zzz</option>
+                    <option value="mirvolta.zzz">mirvolta.zzz</option>
+                    <option value="xernavol.zzz">xernavol.zzz</option>
+                    <option value="brontali.zzz">brontali.zzz</option>
+                    <option value="greyvano.zzz">greyvano.zzz</option>
+                    <option value="poltrevi.zzz">poltrevi.zzz</option>
+                    <option value="vornelax.zzz">vornelax.zzz</option>
+                    <option value="resmitar.zzz">resmitar.zzz</option>
+                    <option value="sindrovi.zzz">sindrovi.zzz</option>
+                    <option value="ramlotex.zzz">ramlotex.zzz</option>
+                    <option value="bemloriz.zzz">bemloriz.zzz</option>
+                    <option value="jemtarox.zzz">jemtarox.zzz</option>
+                    <option value="frenlito.zzz">frenlito.zzz</option>
+                    <option value="volrendo.zzz">volrendo.zzz</option>
+                    <option value="pemlorto.zzz">pemlorto.zzz</option>
+                    <option value="sarmelix.zzz">sarmelix.zzz</option>
+                    <option value="kivlorta.zzz">kivlorta.zzz</option>
+                </select>
+                <input type="text" id="email_domain_text" placeholder="domaine.fr" style="display:none">
+            </div>
+            <label>Âge</label>
+            <div id="age_div">
+                <span>Saisissez votre âge en base 16 :</span>
+            </div>
+
+            <button id="button_validation">Validate</button>
+        </form>
+    </main>
+    <footer></footer>
+    </body>
+</html>
