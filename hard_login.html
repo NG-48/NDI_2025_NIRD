@@ -28,9 +28,12 @@
             </div>
             <div id="mdp_div">
                 <label for="password">Mot de passe</label>
+                <p>Pour votre sécurité, un autre mot de passe est affiché à l’écran. ce mot de passe doit être valide</p>
                 <input type="text" placeholder="abCD#1234" id="password" autocomplete="off" pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{1,2000}$/" minlength="6" maxlength="20"/>
                 <span id="pwdStatus" class="red"></span>
             </div>
+            <label for="email_text">Email</label>
+            <p>Si votre domaine ne figure pas dans notre liste, vous pouvez en personnalisé un avec l'option de même nom</p>
             <div id="email_div">
                 <input type="text" id="email_text" placeholder="alex.durant"> @
                 <select id="email_domain">
@@ -247,8 +250,9 @@
                 </select>
                 <input type="text" id="email_domain_text" placeholder="domaine.fr" style="display:none">
             </div>
+            <label>Âge</label>
             <div id="age_div">
-                <span>Saisissez votre age en base 16 :</span>
+                <span>Saisissez votre âge en base 16 :</span>
             </div>
         </form>
     </main>

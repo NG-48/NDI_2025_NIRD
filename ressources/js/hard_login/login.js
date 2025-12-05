@@ -35,7 +35,7 @@ loginInput.addEventListener('paste', (e) => {  // anti-cheat ctrl+v
 function iteraction(){
     let inter 
     if(isRunning || inter!==undefined) return;
-    let timeLeft = 21;
+    let timeLeft = 36;
     isRunning = true;
     loginInput.value = ""
     inter = setInterval(function () {
@@ -46,7 +46,7 @@ function iteraction(){
             inter=undefined;
         }
         login.textContent = timeLeft;
-    }, 1000); //ms
+    }, 850); //ms
 }
 
 
