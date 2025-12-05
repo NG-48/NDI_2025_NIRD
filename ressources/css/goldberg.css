@@ -43,6 +43,7 @@
     }
 
         .train-area .wagon {
+            position: relative;;
             min-width: 2em;
             height: 2em;
             border: 2px groove black;
@@ -55,3 +56,17 @@
             min-width: 4em;
             border-top: 2px groove black;
         }
+    
+    .goldberg .letter-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-left: 6em;
+    }
+
+    .letter-container.on-board {
+        position: absolute;
+        top: initial;
+        left: initial;
+        margin-left: initial;
+    }

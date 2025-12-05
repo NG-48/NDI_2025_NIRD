@@ -2,11 +2,12 @@
  * Le Train
  */
 
-const trainContainer = document.getElementsByClassName('train-area');
-
 /** @type { HTMLDivElement[] } */
 const wagons = document.querySelectorAll('.train-area .wagon')
 let wagonTranform = 0;
+let trainCanGatherConsumns = true;
+let trainCanGatherVoyels = false;
+
 
 function moveTrain(delta) {
     wagons.forEach((wagon) => {
@@ -16,6 +17,24 @@ function moveTrain(delta) {
 }
 
 async function trainLoop() {
+    if (wagonTranform > -10 && wagonTranform < 0) {
+        document.querySelectorAll('.consumn.on-rails').forEach((consumn) => {
+            consumn.remove();
+        })
+        trainCanGatherConsumns = true;
+    }
+    else
+        trainCanGatherConsumns = false;
+
+    if (wagonTranform > 10 && wagonTranform < 30) {
+        document.querySelectorAll('.voyel.on-rails').forEach((voyel) => {
+            voyel.remove();
+        })
+        trainCanGatherVoyels = true;
+    }
+    else
+        trainCanGatherVoyels = false;
+
     if (wagonTranform >= 70)
         wagonTranform = -20;
     
@@ -23,9 +42,91 @@ async function trainLoop() {
     setTimeout(trainLoop, 100);
 }
 
+/** @param {HTMLDivElement} htmlDivElement */
+function addLetterToRandomWagon(htmlDivElement) {
+    htmlDivElement.classList.remove('falling');
+    fallingLetters.delete(htmlDivElement);
+    htmlDivElement.classList.add('on-board');
+    htmlDivElement.style.transform = 'none';
+
+    console.log(htmlDivElement);
+    
+
+    const possibilities = ['two', 'three', 'four', 'five'];
+
+    const choosenIndex = possibilities[Math.floor(Math.random() * 3)];
+
+    const choosenWagon = document.querySelector(`.wagon.${choosenIndex}`)
+
+    choosenWagon.appendChild(htmlDivElement);
+
+    choosenWagon.childNodes.forEach((node) => node.style.transform = 'none');
+}
+
 trainLoop();
 
 
 /* 
- * 
+ * Les lettres qui tombent
  */
+
+/** contient les translations Y de chaque fallingLetters
+ * @type {Map<HTMLDivElement, number>} */
+const fallingLetters = new Map();
+
+/**
+ * @param {String} letter 
+ * @param {String} classname
+ */
+function createFallingLetter(letter, classname) {
+    const newLetter = document.createElement('div');
+    newLetter.classList.add('letter-container', 'falling');
+    newLetter.textContent = letter;
+    newLetter.classList.add(classname);
+
+    const goldbergMainDiv = document.getElementsByClassName('goldberg')[0];
+
+    goldbergMainDiv.appendChild(newLetter);
+    fallingLetters.set(newLetter, 0);
+}
+
+function lettersFallingLoop() {
+    const elementsToDelete = [];
+    fallingLetters.forEach((translation, htmlDivElement) => {
+        letterFall(htmlDivElement, 1);
+        if (translation >= 85) {
+            elementsToDelete.push(htmlDivElement);
+        }
+    });
+    // Delete elements after the loop
+    elementsToDelete.forEach(el => fallingLetters.delete(el));
+    setTimeout(lettersFallingLoop, 100);
+}
+
+/** @param {HTMLDivElement} htmlDivElement */
+function letterFall(htmlDivElement, delta) {
+    const translation = fallingLetters.get(htmlDivElement) + delta;
+
+    if (translation >= 85 && !htmlDivElement.classList.contains('on-board')) { // Sur les rails
+        htmlDivElement.classList.remove('falling');
+        htmlDivElement.classList.add('on-rails');
+        
+        return;
+    }
+    else if (translation >= 65) {
+
+        if (htmlDivElement.classList.contains('voyel') && trainCanGatherVoyels) {
+            addLetterToRandomWagon(htmlDivElement);
+            return;
+        }
+        else if (htmlDivElement.classList.contains('consumn') && trainCanGatherConsumns) {
+            addLetterToRandomWagon(htmlDivElement);
+            return;
+        }
+    }
+    
+    htmlDivElement.style.transform = `translate(0, ${translation}vh)`;
+    fallingLetters.set(htmlDivElement, translation);
+}
+
+lettersFallingLoop();
