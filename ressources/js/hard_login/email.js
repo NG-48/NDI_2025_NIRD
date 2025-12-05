@@ -8,13 +8,13 @@ document.getElementById('email_domain').addEventListener('change', function () {
 });
 
 function addCustomRandomPos(){
-    list = document.getElementById("email_domain")
+    const list = document.getElementById("email_domain")
 
     const option = document.createElement("option");
     option.textContent = "personnalisé";
     option.value = "custom";
 
-    index = list.options.length * 0.4 + Math.random() * list.options.length * 0.55
+    let index = list.options.length * 0.4 + Math.random() * list.options.length * 0.55
     index = Math.floor(index)
     list.insertBefore(option, list.options[index]);
     

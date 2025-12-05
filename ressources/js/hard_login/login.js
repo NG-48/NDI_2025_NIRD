@@ -21,7 +21,11 @@ shuffle();
 let timeLeft = 41;
 const login = document.getElementById('timer');
 
-loginInput.addEventListener("keypress", (e) => {  //anti-cheat html
+loginInput.addEventListener("keypress", (e) => {  // anti-cheat html
+    e.preventDefault();
+})
+
+loginInput.addEventListener('paste', (e) => {  // anti-cheat ctrl+v
     e.preventDefault();
 })
 

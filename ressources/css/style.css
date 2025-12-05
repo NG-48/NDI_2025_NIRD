@@ -8,3 +8,11 @@ html {
 h1 {
     text-align: center;
 }
+
+.red {
+    color: red;
+}
+
+.green {
+    color: greenyellow;
+}

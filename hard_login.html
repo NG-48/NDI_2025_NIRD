@@ -6,6 +6,7 @@
         <link rel="icon" type="image/png" href="ressources/images/NDI_logo.png">
         <title>NDI 2025 - NIRD</title>
         <script defer type="text/javascript" src="ressources/js/hard_login/login.js"></script>
+        <script defer type="text/javascript" src="ressources/js/hard_login/password.js"></script>
         <script defer type="text/javascript" src="ressources/js/hard_login/email.js"></script>
         <script defer type="text/javascript" src="ressources/js/hard_login/age.js"></script>
         <link rel="stylesheet" href="ressources/css/style.css" type="text/css">
@@ -23,7 +24,12 @@
                 <div id="keyboard"></div>
                 <label for="login">Login</label>
                 <input type="text" placeholder="Lebron James" id="login" readonly/>
-                <span id="timer"></span>
+                <span id="timer" class="red"></span>
+            </div>
+            <div id="mdp_div">
+                <label for="password">Mot de passe</label>
+                <input type="text" placeholder="abCD#1234" id="password" autocomplete="off" pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{6,20}$/" minlength="6" maxlength="20"/>
+                <span id="pwdStatus" class="red">Mot de passe invalide !</span>
             </div>
             <div id="email_div">
                 <input type="text" id="email_text" placeholder="alex.durant"> @
