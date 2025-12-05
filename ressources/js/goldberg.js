@@ -11,7 +11,7 @@ let trainCanGatherVoyels = false;
 
 function moveTrain(delta) {
     wagons.forEach((wagon) => {
-        wagon.style.transform = `translate(${wagonTranform + delta}vw, 0)`
+        wagon.style.transform = `translateX(${wagonTranform + delta}vw)`
     })
     wagonTranform += delta;
 }
@@ -56,8 +56,6 @@ function addLetterToRandomWagon(htmlDivElement) {
     htmlDivElement.classList.add('on-board');
     htmlDivElement.style.transform = 'none';
 
-    console.log(htmlDivElement);
-    
 
     const possibilities = ['two', 'three', 'four', 'five'];
 
@@ -132,8 +130,11 @@ function letterFall(htmlDivElement, delta) {
             return;
         }
     }
+    else if (translation >= 40 && !htmlDivElement.classList.contains('separated')) {
+        addToLetterSeparatorChamber(htmlDivElement);
+    }
     
-    htmlDivElement.style.transform = `translate(0, ${translation}vh)`;
+    htmlDivElement.style.transform = `translate(${htmlDivElement.classList.contains('separated') ? htmlDivElement.classList.contains('voyel') ? 8 : -2 : 0}vw, ${translation}vh)`;
     fallingLetters.set(htmlDivElement, translation);
 }
 
@@ -165,7 +166,28 @@ function textFieldDrainLoop() {
         createFallingLetter(lastChar, letterType);
     }
         
-    setTimeout(textFieldDrainLoop, 1000);
+    setTimeout(textFieldDrainLoop, 3000);
 }
 
 textFieldDrainLoop();
+
+
+/* 
+ * Le séparateur de lettres
+ */
+
+/** @type {HTMLDivElement} */
+const letterSeparatorChamber = document.querySelector('.letter-separator .separator-chamber');
+
+/** @param {HTMLDivElement} htmlDivElement */
+function addToLetterSeparatorChamber(htmlDivElement) {
+    htmlDivElement.classList.add('separated');
+    if (htmlDivElement.classList.contains('voyel')) {
+        letterSeparatorChamber.style.transform = `translateX(8vw)`;
+    }
+    else if (htmlDivElement.classList.contains('consumn')) {
+        letterSeparatorChamber.style.transform = `translateX(-2vw)`;
+    }
+
+    setTimeout(() => letterSeparatorChamber.style.transform = `translateX(0)`, 1000);
+}

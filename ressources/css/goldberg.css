@@ -70,3 +70,23 @@
         left: initial;
         margin-left: initial;
     }
+
+    .goldberg .letter-separator {
+        position: absolute;
+        margin-inline: auto;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        max-height: 2em;
+        margin: auto 0;
+        margin-left: 6em;
+        border-bottom: 2px groove red;
+    }
+
+    .letter-separator .separator-chamber {
+        min-height: 2em;
+        min-width: 2em;
+
+        border-left: 2px groove red;
+        border-right: 2px groove red;
+    }
