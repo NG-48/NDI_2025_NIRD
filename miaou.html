@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Connexion sécurisée</title>
+        <link rel="stylesheet" href="css/styless.css">
+    </head>
+    <body>
+        <header>
+            <h1 class="titre-color">Première connexion</h1>
+            <img src="img/miaou.png" alt="miaou droit" class="skill-droit">
+            <img src="img/miaou.png" alt="miaou gauche" class="skill-gauche">
+        </header>
+        <main>
+            <h2>Identifiant</h2>
+            <p>
+                Pour nous assurer que votre identifiant soit 100% unique, veuillez appuyer sur "Générer Image", puis téléchargez cette dernière.<br>
+                Vous en aurez besoin pour vous connecter ultérieurement.
+            </p>
+            <!-- Bouton pour générer l'image -->
+            <button id="generateImageButton">Générer Image</button>
+            <!-- Zone pour afficher l'image générée -->
+            <div id="imageContainer"></div>
+            <!-- Bouton pour télécharger l'image -->
+            <button id="downloadImageButton" style="display: none;">Télécharger</button>
+
+            <h2>Mot de passe</h2>
+            <p>Veuillez sélectionner une image dans votre galerie.</p>
+            <!-- Bouton pour importer une image -->
+            <label for="importImageInput" class="label-import">Importer une image</label>
+            <input type="file" id="importImageInput" accept="image/*">
+            <!-- Conteneur pour afficher l'image importée -->
+            <div id="importedImageContainer"></div>
+            <!-- Bouton Confirmer -->
+            <button id="confirmButton">Confirmer</button>
+        </main>
+        <footer>
+            <p></p>
+        </footer>
+        <script src="miaou.js"></script>
+    </body>
+</html>

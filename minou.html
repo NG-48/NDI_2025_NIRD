@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion Utilisateur</title>
+    <link rel="stylesheet" href="css/styless.css">
+    <style>
+        /* CSS pour la pop-up */
+        #popup {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 300px;
+            height: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .popup-content {
+            background-color: white;
+            width: 100%;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="titre-color">Connexion Utilisateur</h1>
+    </header>
+    <main>
+        <h2>Identifiant</h2>
+        <p>Veuillez importer l'image identifiant que vous avez téléchargée :</p>
+        <input type="file" id="idImageInput" accept="image/*">
+        <div id="idImageContainer"></div>
+        <h2>Mot de passe</h2>
+        <p>Veuillez importer l'image mot de passe :</p>
+        <input type="file" id="passwordImageInput" accept="image/*">
+        <div id="passwordImageContainer"></div>
+        <button id="loginButton">Se connecter</button>
+    </main>
+    <!-- Fenêtre pop-up -->
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p>Vous vous êtes connecté avec succès !</p>
+            <button id="popupOk">OK</button>
+        </div>
+    </div>
+    <script defer src="minou.js"></script>
+</body>
+</html>
+
