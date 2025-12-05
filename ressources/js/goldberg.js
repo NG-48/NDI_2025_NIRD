@@ -233,7 +233,7 @@ function textFieldDrainLoop() {
         createFallingLetter(lastChar, letterType);
     }
         
-    setTimeout(textFieldDrainLoop, 1500);
+    setTimeout(textFieldDrainLoop, 1000);
 }
 
 textFieldDrainLoop();
@@ -256,5 +256,5 @@ function addToLetterSeparatorChamber(htmlDivElement) {
         letterSeparatorChamber.style.transform = `translateX(-2vw)`;
     }
 
-    setTimeout(() => letterSeparatorChamber.style.transform = `translateX(0)`, 1000);
+    setTimeout(() => letterSeparatorChamber.style.transform = `translateX(0)`, 700);
 }
