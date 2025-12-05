@@ -28,6 +28,16 @@
         min-height: 10%;
     }
 
+    .goldberg .result-input2 {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin-right: 1em;
+        margin-bottom: 12em;
+        min-width: 30%;
+        min-height: 10%;
+    }
+
     .goldberg .train-area {
         position: absolute;
         display: flex;
@@ -56,7 +66,38 @@
             min-width: 4em;
             border-top: 2px groove black;
         }
-    
+
+
+    .goldberg .train-area2 {
+        position: absolute;
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+
+        min-width: 100%;
+        height: 4em;
+        bottom: 0;
+        margin-bottom: 10em;
+        border: 2px solid green;
+        gap: 0.5em;
+    }
+
+        .train-area2 .wagon2 {
+            position: relative;;
+            min-width: 2em;
+            height: 2em;
+            border: 2px groove black;
+            border-top: none;
+            margin-bottom: 0.5em;
+        }
+
+
+        .wagon2.one {
+            min-width: 4em;
+            border-top: 2px groove black;
+        }
+
+
     .goldberg .letter-container {
         position: absolute;
         top: 0;
