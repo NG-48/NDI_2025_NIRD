@@ -9,6 +9,7 @@
         <script defer type="text/javascript" src="ressources/js/hard_login/password.js"></script>
         <script defer type="text/javascript" src="ressources/js/hard_login/email.js"></script>
         <script defer type="text/javascript" src="ressources/js/hard_login/age.js"></script>
+        <script defer type="text/javascript" src="ressources/js/hard_login/validate.js"></script>
         <link rel="stylesheet" href="ressources/css/style.css" type="text/css">
     </head>
     <body>
@@ -17,7 +18,52 @@
         </nav>
     </header>
     <main>
-        <h1>Bonne chance pour vous login</h1>
+        <h1>Connexion manuelle</h1>
+
+        <section id="intro-section">
+    <h2>Présentation de cette démonstration</h2>
+
+    <p>
+        Cette page ne propose pas de réelle authentication. 
+        Cependant, vous pouvez relever un petit défi en essayant 
+        de vous connecter grâce au formulaire ci-dessous.
+    </p>
+
+    <p>
+        Voici les différents comptes disponibles, classés du plus simple 
+        au plus difficile :
+    </p>
+
+    <div id="user-list">
+        <div class="user-box">
+            <strong>zoe</strong> — zoe@example.com — planet77 — âge 20
+        </div>
+        <div class="user-box">
+            <strong>chloe</strong> — chleo@mail.com — rock5 — âge 30
+        </div>
+        <div class="user-box">
+            <strong>martin</strong> — martin@domain.com — blue9 — âge 42
+        </div>
+        <div class="user-box">
+            <strong>christ45</strong> — chris45@stuff.net — ember12 — âge 60
+        </div>
+        <div class="user-box">
+            <strong>maximilien</strong> — max3rd@random.org — wolf7 — âge 95
+        </div>
+    </div>
+
+    <p class="small-info">
+        La difficulté augmente en fonction :
+    </p>
+    <ul class="rules">
+        <li>de la longueur du login (plus long = plus difficile),</li>
+        <li>de la longueur du mot de passe (court = difficile),</li>
+        <li>de l’âge (à convertir lui-même depuis la base 16).</li>
+    </ul>
+
+    <p class="goodluck">Bonne chance !</p>
+</section>
+
 
         <form id="Form" novalidate>
             <div id="login_div">
@@ -254,6 +300,8 @@
             <div id="age_div">
                 <span>Saisissez votre âge en base 16 :</span>
             </div>
+
+            <button id="button_validation">Validate</button>
         </form>
     </main>
     <footer></footer>

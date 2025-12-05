@@ -1,5 +1,7 @@
-let email_domain_textfield = document.getElementById('email_domain_text')
-document.getElementById('email_domain').addEventListener('change', function () {
+const email_domain_textfield = document.getElementById('email_domain_text')
+const email_text = document.getElementById('email_text')
+const list = document.getElementById("email_domain")
+list.addEventListener('change', function () {
   if (this.value === "custom") {
     email_domain_textfield.style.display = "inline"
   }else{
@@ -8,8 +10,7 @@ document.getElementById('email_domain').addEventListener('change', function () {
 });
 
 function addCustomRandomPos(){
-    const list = document.getElementById("email_domain")
-
+    
     const option = document.createElement("option");
     option.textContent = "personnalisé";
     option.value = "custom";
@@ -21,3 +22,7 @@ function addCustomRandomPos(){
 }
 
 addCustomRandomPos()
+
+function getEmail(){
+  return  email_text.value+"@"+email_domain_textfield.value
+}
