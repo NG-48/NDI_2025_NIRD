@@ -35,8 +35,15 @@ async function trainLoop() {
     else
         trainCanGatherVoyels = false;
 
-    if (wagonTranform >= 70)
+    if (wagonTranform >= 70) {
+        wagons.forEach((wagon) => {
+            wagon.childNodes.forEach((node) => {
+                textFieldResult.value += node.textContent;
+            });
+            wagon.replaceChildren();
+        });
         wagonTranform = -20;
+    }
     
     moveTrain(1);
     setTimeout(trainLoop, 100);
