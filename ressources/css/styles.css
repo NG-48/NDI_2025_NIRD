@@ -194,6 +194,12 @@ body {
 	align-items: center
 }
 
+.short-page-footer {
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+}
+
 @media(max-width:900px) {
 	.grid-3 {
 		grid-template-columns: 1fr
