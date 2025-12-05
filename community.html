@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Communauté NIRD</title>
+<link rel="stylesheet" href="ressources/css/styles.css">
+<script defer src="ressources/js/explorer/common.js"></script>
+<script defer src="ressources/js/explorer/community.js"></script>
+</head>
+<body class="page-community">
+<header class="site-header">
+<div class="container header-inner">
+<a class="brand" href="accueil.html">NIRD Explorer</a>
+<nav class="main-nav">
+<a href="parcours.html">Parcours</a>
+<a href="solutions.html">Solutions</a>
+<a href="tools.html">Boîte à outils</a>
+<a href="community.html">Communauté</a>
+</nav>
+</div>
+</header>
+
+
+<main class="container">
+<h1>Communauté</h1>
+<p>Partages, témoignages et calendrier d'événements.</p>
+
+
+<section class="testimonials">
+<article class="testimonial">
+<h3>Collège La Fontaine</h3>
+<p>Après une semaine sans cloud, les pratiques pédagogiques se sont diversifiées et la facturation a baissé.</p>
+</article>
+<article class="testimonial">
+<h3>École Victor Hugo</h3>
+<p>Mise en place d'un système d'impression mutualisé et d'ateliers de réparation.</p>
+</article>
+</section>
+
+
+<section class="contribution">
+<h2>Soumettre une ressource</h2>
+<form id="contribForm">
+<label>Nom de l'établissement<input name="name" required></label>
+<label>Description<textarea name="desc" required></textarea></label>
+<button class="btn" type="submit">Envoyer</button>
+</form>
+<div id="contribStatus" aria-live="polite"></div>
+</section>
+</main>
+
+
+<footer class="site-footer">
+<div class="container footer-inner">
+<p>© NIRD Explorer</p>
+</div>
+</footer>
+
+</body>
+</html>
