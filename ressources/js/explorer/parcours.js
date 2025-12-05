@@ -1,13 +1,12 @@
+(function(){
 const steps = document.querySelectorAll('.step-list li');
-if(steps.length>=0){
-    steps.forEach((li)=>{
+if(steps.length===0) return;
+
+
+steps.forEach((li)=>{
 const btn = li.querySelector('[data-action="next"]');
 if(btn){ btn.addEventListener('click', ()=>{ goToNext(li); }); }
 });
-}
-
-
-
 
 
 function goToNext(li){
@@ -46,10 +45,11 @@ plan.appendChild(p);
 const gen = document.getElementById('generatePlan');
 gen && gen.addEventListener('click', ()=>{
 const items=[...plan.querySelectorAll('.plan-item')].map(n=>n.textContent);
-alert('Plan généré:' + items())
-});
+alert(`Plan généré :
+- ${items.join('\n- ')}`);});
 }
 
 
 const badgeBtn = document.getElementById('claimBadge');
 badgeBtn && badgeBtn.addEventListener('click', ()=> alert('Bravo — votre badge NIRD vous attend !'));
+})();
