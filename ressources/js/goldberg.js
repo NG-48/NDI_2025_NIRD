@@ -26,7 +26,7 @@ async function trainLoop() {
     else
         trainCanGatherConsumns = false;
 
-    if (wagonTranform > 10 && wagonTranform < 30) {
+    if (wagonTranform > 0 && wagonTranform < 20) {
         document.querySelectorAll('.voyel.on-rails').forEach((voyel) => {
             voyel.remove();
         })
@@ -119,7 +119,7 @@ function letterFall(htmlDivElement, delta) {
         
         return;
     }
-    else if (translation >= 65) {
+    else if (translation >= 80) {
 
         if (htmlDivElement.classList.contains('voyel') && trainCanGatherVoyels) {
             addLetterToRandomWagon(htmlDivElement);
@@ -166,7 +166,7 @@ function textFieldDrainLoop() {
         createFallingLetter(lastChar, letterType);
     }
         
-    setTimeout(textFieldDrainLoop, 3000);
+    setTimeout(textFieldDrainLoop, 1500);
 }
 
 textFieldDrainLoop();

@@ -61,7 +61,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        margin-left: 6em;
+        margin-left: 11em;
     }
 
     .letter-container.on-board {
@@ -79,7 +79,7 @@
         left: 0;
         max-height: 2em;
         margin: auto 0;
-        margin-left: 6em;
+        margin-left: 11em;
         border-bottom: 2px groove red;
     }
 
