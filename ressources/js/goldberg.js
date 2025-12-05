@@ -17,7 +17,7 @@ function moveTrain(delta) {
 }
 
 async function trainLoop() {
-    if (wagonTranform > -10 && wagonTranform < 0) {
+    if (wagonTranform > 0 && wagonTranform < 10) {
         document.querySelectorAll('.consumn.on-rails').forEach((consumn) => {
             consumn.remove();
         })
@@ -83,7 +83,7 @@ function moveTrain2(delta) {
 
 async function trainLoop2() {
 
-    if (wagonTranform2 > 0 && wagonTranform2 < 20) {
+    if (wagonTranform2 > -5 && wagonTranform2 < 15) {
         document.querySelectorAll('.voyel.on-rails').forEach((voyel) => {
             voyel.remove();
         })
@@ -199,7 +199,7 @@ function letterFall(htmlDivElement, delta) {
         addToLetterSeparatorChamber(htmlDivElement);
     }
     
-    htmlDivElement.style.transform = `translate(${htmlDivElement.classList.contains('separated') ? htmlDivElement.classList.contains('voyel') ? 8 : -2 : 0}vw, ${translation}vh)`;
+    htmlDivElement.style.transform = `translate(${htmlDivElement.classList.contains('separated') ? htmlDivElement.classList.contains('voyel') ? 2 : -2 : 0}vw, ${translation}vh)`;
     fallingLetters.set(htmlDivElement, translation);
 }
 
@@ -250,7 +250,7 @@ const letterSeparatorChamber = document.querySelector('.letter-separator .separa
 function addToLetterSeparatorChamber(htmlDivElement) {
     htmlDivElement.classList.add('separated');
     if (htmlDivElement.classList.contains('voyel')) {
-        letterSeparatorChamber.style.transform = `translateX(8vw)`;
+        letterSeparatorChamber.style.transform = `translateX(2vw)`;
     }
     else if (htmlDivElement.classList.contains('consumn')) {
         letterSeparatorChamber.style.transform = `translateX(-2vw)`;
