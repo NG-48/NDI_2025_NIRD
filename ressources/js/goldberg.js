@@ -82,7 +82,8 @@ function createFallingLetter(letter, classname) {
     const newLetter = document.createElement('div');
     newLetter.classList.add('letter-container', 'falling');
     newLetter.textContent = letter;
-    newLetter.classList.add(classname);
+    if (classname)
+        newLetter.classList.add(classname);
 
     const goldbergMainDiv = document.getElementsByClassName('goldberg')[0];
 
@@ -130,3 +131,34 @@ function letterFall(htmlDivElement, delta) {
 }
 
 lettersFallingLoop();
+
+
+/* 
+ * Les TextFields
+ */
+
+/** @type {HTMLTextAreaElement} */
+const textFieldInitial = document.getElementById('initial-input');
+/** @type {HTMLTextAreaElement} */
+const textFieldResult = document.getElementById('result-input');
+
+
+function textFieldDrainLoop() {
+    
+    const voyels = [
+        'a', 'e', 'i', 'o', 'u', 'y',
+        'à', 'â', 'ä', 'é', 'è', 'ê', 'ë', 'î', 'ï', 'ô', 'ö', 'ù', 'û', 'ü', 'ÿ',
+    ]
+    if (textFieldInitial.value.length != 0) {
+        console.log(textFieldInitial.value.length);
+        const lastChar = textFieldInitial.value.charAt(textFieldInitial.value.length - 1);
+        textFieldInitial.value = textFieldInitial.value.slice(0, textFieldInitial.value.length - 1);
+
+        const letterType = voyels.includes(lastChar.toLowerCase()) ? 'voyel' : 'consumn';
+        createFallingLetter(lastChar, letterType);
+    }
+        
+    setTimeout(textFieldDrainLoop, 1000);
+}
+
+textFieldDrainLoop();
