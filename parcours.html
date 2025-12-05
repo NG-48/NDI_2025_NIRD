@@ -7,7 +7,6 @@
     <title>Parcours NIRD — Pas à pas</title>
     <link rel="stylesheet" href="ressources/css/styles.css">
     <script defer src="ressources/js/explorer/common.js"></script>
-    <script defer src="ressources/js/explorer/parcours.js"></script>
 </head>
 <body class="page-parcours">
 <header class="site-header">
@@ -26,33 +25,151 @@
 <main class="container">
     <section class="steps">
         <h1>Parcours NIRD</h1>
-        <p>Un parcours en 4 étapes — conçu pour établissements et classes.</p>
+        <p>Un parcours en 4 étapes — conçu pour plusieurs échelles.</p>
 
 
 <ol id="stepsList" class="step-list">
-    <li data-step="1" class="active">
+    <li data-step="1">
         <h3>1 — Diagnostiquer</h3>
         <p>Identifier où votre établissement dépend le plus du numérique.</p>
-        <button class="btn small" data-action="next">Je veux diagnostiquer</button>
+        <div class="step-details">
+            <h4>À l'échelle d'un établissement scolaire :</h4>
+            <ul>
+                <li><strong>Matériel :</strong> Recensez les ordinateurs, tablettes et périphériques. Combien fonctionnent encore mais sont jugés "obsolètes" ? Quel âge ont-ils vraiment ?</li>
+                <li><strong>Logiciels :</strong> Listez les licences payantes utilisées (suites bureautiques, logiciels spécialisés). Calculez leur coût annuel total.</li>
+                <li><strong>Stockage :</strong> Où sont hébergées vos données ? Dans le cloud d'une entreprise américaine ? Sur des serveurs européens ? En local ?</li>
+                <li><strong>Compétences :</strong> Qui peut intervenir sur le parc informatique ? L'établissement dépend-il d'un prestataire externe ?</li>
+            </ul>
+
+            <h4>À l'échelle d'une classe :</h4>
+            <ul>
+                <li>Organisez un atelier où les élèves listent les outils numériques qu'ils utilisent quotidiennement (applications, sites web, services).</li>
+                <li>Classez-les par catégorie : gratuit/payant, open source/propriétaire, données en Europe/hors UE.</li>
+                <li>Créez une carte mentale des dépendances numériques de la classe.</li>
+            </ul>
+
+            <h4>À l'échelle d'un foyer :</h4>
+            <ul>
+                <li>Faites l'inventaire du matériel informatique à la maison : combien d'appareils ? Sont-ils encore mis à jour ?</li>
+                <li>Identifiez les abonnements numériques mensuels (streaming, stockage cloud, logiciels) et calculez le coût annuel.</li>
+                <li>Vérifiez où sont stockées vos photos de famille, documents importants : dépendez-vous d'une seule entreprise ?</li>
+            </ul>
+
+            <p class="step-tip"><strong>Astuce :</strong> Créez un tableau simple avec trois colonnes : "Ce qui fonctionne", "Ce qui coûte cher", "Ce qui nous rend dépendants".</p>
+        </div>
     </li>
     <li data-step="2">
         <h3>2 — Expérimenter</h3>
         <p>Tester des alternatives pendant une semaine (ex : journée sans cloud).</p>
-        <button class="btn small" data-action="next">Lancer un défi</button>
+        <div class="step-details">
+            <h4>Exemples de défis pour un établissement :</h4>
+            <ul>
+                <li><strong>Semaine Linux :</strong> Installer Linux (Ubuntu, Linux NIRD ou PrimTux) sur 5 ordinateurs "obsolètes" et les proposer à des volontaires (élèves, enseignants) pour une semaine de test.</li>
+                <li><strong>Journée sans cloud propriétaire :</strong> Utiliser uniquement des outils locaux ou des services libres (Nextcloud, Cryptpad) pendant 24h.</li>
+                <li><strong>Atelier réemploi :</strong> Organiser une session de reconditionnement avec un club informatique local pour redonner vie à de vieux ordinateurs.</li>
+                <li><strong>Migration progressive :</strong> Remplacer un logiciel propriétaire par son équivalent libre dans une seule classe (ex : LibreOffice au lieu de MS Office).</li>
+            </ul>
+
+            <h4>pour une classe :</h4>
+            <ul>
+                <li><strong>Challenge "0 Google" :</strong> Pendant une semaine, utiliser des alternatives (Qwant, DuckDuckGo, Framapad, etc.).</li>
+                <li><strong>Projet collaboratif libre :</strong> Réaliser un travail de groupe uniquement avec des outils open source et documenter l'expérience.</li>
+                <li><strong>Défi éco-délégués :</strong> Calculer l'empreinte carbone numérique de la classe et proposer 3 actions concrètes.</li>
+            </ul>
+
+            <h4>pour un foyer :</h4>
+            <ul>
+                <li><strong>Week-end de découverte :</strong> Installer Linux sur un vieil ordinateur familial pour voir s'il peut servir pour les devoirs des enfants.</li>
+                <li><strong>Défi stockage local :</strong> Pendant un mois, sauvegarder toutes les photos sur un disque dur externe au lieu du cloud.</li>
+                <li><strong>Test alternatives gratuites :</strong> Remplacer une application payante par son équivalent gratuit et open source (ex : GIMP au lieu de Photoshop).</li>
+            </ul>
+
+            <p class="step-tip"><strong>Astuce :</strong> Commencez petit ! Un seul changement bien documenté vaut mieux que dix abandonnés. Prenez des notes sur ce qui fonctionne et ce qui bloque.</p>
+        </div>
     </li>
     <li data-step="3">
         <h3>3 — Formaliser</h3>
         <p>Construire un plan d’action simple et assigner des rôles.</p>
-        <div class="plan-builder">
-            <div class="bucket" id="ideas">Idées (glisser)</div>
-            <div class="bucket" id="plan">Mon plan (dépose ici)</div>
-            <button class="btn small" id="generatePlan">Générer plan</button>
+        <div class="step-details">
+            <h4>Pour un établissement :</h4>
+            <ul>
+                <li><strong>Objectifs à court terme (quelques mois) :</strong>
+                    <ul>
+                        <li>Migrer 20% du parc vers Linux pour les usages bureautiques simples</li>
+                        <li>Former 2 enseignants référents aux logiciels libres</li>
+                        <li>Mettre en place un atelier mensuel de reconditionnement avec les éco-délégués</li>
+                    </ul>
+                </li>
+                <li><strong>Répartition des rôles :</strong>
+                    <ul>
+                        <li>Direction : validation du projet et communication institutionnelle</li>
+                        <li>Technicien réseau : installation et maintenance des systèmes Linux</li>
+                        <li>Enseignant(e) référent(e) : formation des collègues et accompagnement pédagogique</li>
+                        <li>Éco-délégués : sensibilisation auprès des élèves et organisation d'ateliers</li>
+                        <li>Collectivité : soutien financier pour le matériel de reconditionnement</li>
+                    </ul>
+                </li>
+                <li><strong>Budget prévisionnel :</strong> Calculer les économies de licences et les investissements nécessaires (formation, petit matériel).</li>
+            </ul>
+
+            <h4>Pour une classe :</h4>
+            <ul>
+                <li>Créer une "Charte numérique de la classe" : quels outils privilégier ? Quelles pratiques adopter ?</li>
+                <li>Désigner des "ambassadeurs du libre" : 2-3 élèves volontaires qui aident leurs camarades sur les nouveaux outils.</li>
+                <li>Planifier un projet pédagogique trimestriel intégrant exclusivement des outils libres.</li>
+                <li>Établir un calendrier de points d'étape mensuels pour ajuster le plan.</li>
+            </ul>
+
+            <h4>Pour un foyer :</h4>
+            <ul>
+                <li>Définir 2-3 objectifs simples (ex : "réduire nos abonnements de 50€/an", "sauvegarder nos données localement").</li>
+                <li>Créer un calendrier familial de transition progressive (ex : "en septembre, on teste LibreOffice, en octobre, on migre nos photos").</li>
+                <li>Attribuer des responsabilités : qui gère les sauvegardes ? Qui explore les nouvelles alternatives ?</li>
+                <li>Prévoir un budget pour du matériel de stockage local ou un vieil ordinateur reconditionné.</li>
+            </ul>
+
+            <p class="step-tip"><strong>Astuce :</strong> Un bon plan est SMART : Spécifique, Mesurable, Atteignable, Temporellement défini. Évitez le "on devrait tout changer" au profit du "d'ici mars, on aura fait ça".</p>
         </div>
     </li>
     <li data-step="4">
         <h3>4 — Partager & Grandir</h3>
         <p>Raconter l’expérience, partager les ressources et faire grandir la communauté.</p>
-        <button class="btn small" id="claimBadge">Réclamer un badge</button>
+        <div class="step-details">
+            <h4>Formes de partage pour un établissement :</h4>
+            <ul>
+                <li><strong>Retour d'expérience écrit :</strong> Publier un article sur le site de l'établissement ou sur la Forge des communs numériques éducatifs.</li>
+                <li><strong>Témoignage vidéo :</strong> Faire intervenir des élèves, comme au lycée Carnot, pour expliquer "Linux, c'est facile !"</li>
+                <li><strong>Présentation en conseil pédagogique :</strong> Partager les résultats chiffrés (économies, satisfaction des utilisateurs) avec les collègues.</li>
+                <li><strong>Journée portes ouvertes NIRD :</strong> Organiser un événement pour montrer les machines reconditionnées aux familles et autres établissements.</li>
+                <li><strong>Ressources mutualisées :</strong> Mettre en ligne vos tutoriels, fiches pratiques, scripts d'installation sur la Forge.</li>
+            </ul>
+
+            <h4>Formes de partage pour une classe :</h4>
+            <ul>
+                <li>Créer une exposition sur "Notre démarche NIRD" pour le reste de l'établissement.</li>
+                <li>Rédiger un guide illustré "Les outils libres qu'on utilise" à destination des autres classes.</li>
+                <li>Organiser une intervention dans d'autres classes pour présenter le projet.</li>
+                <li>Participer à un concours ou événement (Nuit de l'Info, concours d'éco-délégués) pour valoriser le travail.</li>
+            </ul>
+
+            <h4>Formes de partage pour un foyer :</h4>
+            <ul>
+                <li>Écrire un article de blog ou un post sur les réseaux sociaux : "Comment on a économisé 200€/an en logiciels".</li>
+                <li>Organiser un atelier dans votre entourage : montrer Linux à des amis curieux autour d'un café.</li>
+                <li>Donner vos anciens ordinateurs reconditionnés à des associations (Emmaüs Connect, ressourceries locales).</li>
+                <li>Rejoindre un forum ou groupe local de passionnés du libre pour échanger trucs et astuces.</li>
+            </ul>
+
+            <h4>Rejoindre la communauté NIRD :</h4>
+            <ul>
+                <li>Contributez à la Forge des communs numériques éducatifs avec vos ressources et retours d'expérience.</li>
+                <li>Participez aux échanges entre établissements engagés dans la démarche.</li>
+                <li>Proposez vos compétences (technique, pédagogie, graphisme) pour enrichir les outils communs.</li>
+                <li>Faites remonter vos besoins et idées au collectif enseignant NIRD.</li>
+            </ul>
+
+            <p class="step-tip"><strong>Astuce :</strong> Chaque petit geste compte ! Un simple témoignage honnête ("voilà ce qui a marché, voilà où on a galéré") est infiniment plus utile qu'un discours parfait. La communauté NIRD grandit grâce aux expériences réelles, pas aux promesses.</p>
+        </div>
     </li>
 </ol>
 

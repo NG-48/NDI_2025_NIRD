@@ -24,27 +24,29 @@
 
 
 <main class="container">
-    <h1>Catalogue de solutions</h1>
-    <p>Filtre par public, impact ou difficulté.</p>
-    <div class="filters">
-        <select id="filterAudience">
-            <option value="all">Tous</option>
-            <option value="enseignants">Enseignants</option>
-            <option value="familles">Familles</option>
-            <option value="collectivites">Collectivités</option>
-        </select>
-        <select id="filterLevel">
-            <option value="all">Niveau</option>
-            <option value="easy">Facile</option>
-            <option value="medium">Moyen</option>
-            <option value="hard">Avancé</option>
-        </select>
+    <div class="container">
+        <h1>Catalogue de solutions</h1>
+        <p>Filtre par public, impact ou difficulté.</p>
+        <div class="filters">
+            <select id="filterAudience">
+                <option value="all">Tous</option>
+                <option value="enseignants">Enseignants</option>
+                <option value="familles">Familles</option>
+                <option value="collectivites">Collectivités</option>
+            </select>
+            <select id="filterLevel">
+                <option value="all">Niveau</option>
+                <option value="easy">Facile</option>
+                <option value="medium">Moyen</option>
+                <option value="hard">Avancé</option>
+            </select>
+        </div>
+
+
+        <ul id="solutionsGrid" class="solutions-grid">
+            <!-- JS inject -->
+        </ul>
     </div>
-
-
-<ul id="solutionsGrid" class="solutions-grid">
-    <!-- JS inject -->
-</ul>
 </main>
 
 

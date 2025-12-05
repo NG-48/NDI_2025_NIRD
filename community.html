@@ -24,31 +24,32 @@
 
 
 <main class="container">
-    <h1>Communauté</h1>
-    <p>Partages, témoignages et calendrier d'événements.</p>
+    <div class="container">
+        <h1>Communauté</h1>
+        <p>Partages, témoignages et calendrier d'événements.</p>
+
+        <section class="testimonials">
+            <article class="testimonial">
+                <h3>Collège La Fontaine</h3>
+                <p>Après une semaine sans cloud, les pratiques pédagogiques se sont diversifiées et la facturation a baissé.</p>
+            </article>
+            <article class="testimonial">
+                <h3>École Victor Hugo</h3>
+                <p>Mise en place d'un système d'impression mutualisé et d'ateliers de réparation.</p>
+            </article>
+        </section>
 
 
-<section class="testimonials">
-    <article class="testimonial">
-        <h3>Collège La Fontaine</h3>
-        <p>Après une semaine sans cloud, les pratiques pédagogiques se sont diversifiées et la facturation a baissé.</p>
-    </article>
-    <article class="testimonial">
-        <h3>École Victor Hugo</h3>
-        <p>Mise en place d'un système d'impression mutualisé et d'ateliers de réparation.</p>
-    </article>
-</section>
-
-
-<section class="contribution">
-    <h2>Soumettre une ressource</h2>
-    <form id="contribForm">
-        <label>Nom de l'établissement<input name="name" required></label>
-        <label>Description<textarea name="desc" required></textarea></label>
-        <button class="btn" type="submit">Envoyer</button>
-    </form>
-    <div id="contribStatus" aria-live="polite"></div>
-</section>
+        <section class="contribution">
+            <h2>Soumettre une ressource</h2>
+            <form id="contribForm">
+                <label>Nom de l'établissement<input name="name" required></label>
+                <label>Description<textarea name="desc" required></textarea></label>
+                <button class="btn" type="submit">Envoyer</button>
+            </form>
+            <div id="contribStatus" aria-live="polite"></div>
+        </section>
+    </div>
 </main>
 
 
