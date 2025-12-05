@@ -1,70 +1,71 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Parcours NIRD — Pas à pas</title>
-<link rel="stylesheet" href="ressources/css/styles.css">
-<script defer src="ressources/js/explorer/common.js"></script>
-<script defer src="ressources/js/explorer/parcours.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" type="image/png" href="ressources/images/logo-NIRD.png"/>
+    <title>Parcours NIRD — Pas à pas</title>
+    <link rel="stylesheet" href="ressources/css/styles.css">
+    <script defer src="ressources/js/explorer/common.js"></script>
+    <script defer src="ressources/js/explorer/parcours.js"></script>
 </head>
 <body class="page-parcours">
 <header class="site-header">
-<div class="container header-inner">
-<a class="brand" href="accueil.html">NIRD Explorer</a>
-<nav class="main-nav">
-<a href="parcours.html">Parcours</a>
-<a href="solutions.html">Solutions</a>
-<a href="tools.html">Boîte à outils</a>
-<a href="community.html">Communauté</a>
-</nav>
-</div>
+    <div class="container header-inner">
+        <a class="brand" href="accueil.html">NIRD Explorer</a>
+        <nav class="main-nav">
+            <a href="parcours.html">Parcours</a>
+            <a href="solutions.html">Solutions</a>
+            <a href="tools.html">Boîte à outils</a>
+            <a href="community.html">Communauté</a>
+        </nav>
+    </div>
 </header>
 
 
 <main class="container">
-<section class="steps">
-<h1>Parcours NIRD</h1>
-<p>Un parcours en 4 étapes — conçu pour établissements et classes.</p>
+    <section class="steps">
+        <h1>Parcours NIRD</h1>
+        <p>Un parcours en 4 étapes — conçu pour établissements et classes.</p>
 
 
 <ol id="stepsList" class="step-list">
-<li data-step="1" class="active">
-<h3>1 — Diagnostiquer</h3>
-<p>Identifier où votre établissement dépend le plus du numérique.</p>
-<button class="btn small" data-action="next">Je veux diagnostiquer</button>
-</li>
-<li data-step="2">
-<h3>2 — Expérimenter</h3>
-<p>Tester des alternatives pendant une semaine (ex : journée sans cloud).</p>
-<button class="btn small" data-action="next">Lancer un défi</button>
-</li>
-<li data-step="3">
-<h3>3 — Formaliser</h3>
-<p>Construire un plan d’action simple et assigner des rôles.</p>
-<div class="plan-builder">
-<div class="bucket" id="ideas">Idées (glisser)</div>
-<div class="bucket" id="plan">Mon plan (dépose ici)</div>
-<button class="btn small" id="generatePlan">Générer plan</button>
-</div>
-</li>
-<li data-step="4">
-<h3>4 — Partager & Grandir</h3>
-<p>Raconter l’expérience, partager les ressources et faire grandir la communauté.</p>
-<button class="btn small" id="claimBadge">Réclamer un badge</button>
-</li>
+    <li data-step="1" class="active">
+        <h3>1 — Diagnostiquer</h3>
+        <p>Identifier où votre établissement dépend le plus du numérique.</p>
+        <button class="btn small" data-action="next">Je veux diagnostiquer</button>
+    </li>
+    <li data-step="2">
+        <h3>2 — Expérimenter</h3>
+        <p>Tester des alternatives pendant une semaine (ex : journée sans cloud).</p>
+        <button class="btn small" data-action="next">Lancer un défi</button>
+    </li>
+    <li data-step="3">
+        <h3>3 — Formaliser</h3>
+        <p>Construire un plan d’action simple et assigner des rôles.</p>
+        <div class="plan-builder">
+            <div class="bucket" id="ideas">Idées (glisser)</div>
+            <div class="bucket" id="plan">Mon plan (dépose ici)</div>
+            <button class="btn small" id="generatePlan">Générer plan</button>
+        </div>
+    </li>
+    <li data-step="4">
+        <h3>4 — Partager & Grandir</h3>
+        <p>Raconter l’expérience, partager les ressources et faire grandir la communauté.</p>
+        <button class="btn small" id="claimBadge">Réclamer un badge</button>
+    </li>
 </ol>
 
 
 <div id="parcoursFeedback" class="parcours-feedback"></div>
-</section>
+    </section>
 </main>
 
 
 <footer class="site-footer">
-<div class="container footer-inner">
-<p>© NIRD Explorer</p>
-</div>
+    <div class="container footer-inner">
+        <p>© NIRD Explorer</p>
+    </div>
 </footer>
 
 
