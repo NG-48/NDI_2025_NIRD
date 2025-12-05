@@ -3,6 +3,9 @@ let chars = [
     "A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
     "0","1","2","3","4","5","6","7","8","9"
 ];
+
+let isRunning = false;
+
 const keyboard = document.getElementById("keyboard");
 const loginInput = document.getElementById("login");
 for (let i = 0; i < chars.length; i++) {
@@ -11,6 +14,7 @@ for (let i = 0; i < chars.length; i++) {
     key.classList.add("key");
     key.addEventListener("click", (e) => {
         e.preventDefault();
+        iteraction();
         loginInput.value += key.textContent;
         shuffle();
     })
@@ -18,7 +22,6 @@ for (let i = 0; i < chars.length; i++) {
 }
 
 shuffle();
-let timeLeft = 41;
 const login = document.getElementById('timer');
 
 loginInput.addEventListener("keypress", (e) => {  // anti-cheat html
@@ -29,20 +32,22 @@ loginInput.addEventListener('paste', (e) => {  // anti-cheat ctrl+v
     e.preventDefault();
 })
 
-let twoSec = setInterval(function () {
-    clearInterval(twoSec);
-
-    setInterval(function () {
+function iteraction(){
+    let inter 
+    if(isRunning || inter!==undefined) return;
+    let timeLeft = 21;
+    isRunning = true;
+    loginInput.value = ""
+    inter = setInterval(function () {
         timeLeft--;
-        if (timeLeft < 0) {
-            timeLeft = 40;
-            loginInput.value = "";
-            shuffle();
+        if (timeLeft === 0) {
+            isRunning = false;
+            clearInterval(inter)
+            inter=undefined;
         }
         login.textContent = timeLeft;
     }, 1000); //ms
-
-}, 2000);
+}
 
 
 function shuffle() {

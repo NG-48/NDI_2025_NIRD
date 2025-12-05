@@ -3,7 +3,7 @@ let pwdStatus = document.getElementById('pwdStatus');
 let realPassword = "";
 let previousRealPassword = "";
 let previousFakePassword = "";
-const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{6,20}$/;
+const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{1,2000}$/;
 
 passwordInput.addEventListener('keypress', (e) => {  // ajout de caractères
     const key = e.key;
@@ -56,11 +56,11 @@ function updateStatus() {
     if (passwordRegex.test(passwordInput.value)) {  // un peu sales comme lignes
         pwdStatus.classList.remove('red');
         pwdStatus.classList.add('green');
-        pwdStatus.textContent = "Mot de pass valide !"
+        pwdStatus.textContent = "Mot de passe valide !"
     } else {
         pwdStatus.classList.remove('green');
         pwdStatus.classList.add('red');
-        pwdStatus.textContent = "Mot de passe invalide !"
+        pwdStatus.textContent = "Mot de passe visible invalide ! il doit contenir à minima 1 miniscule, 1 majuscule, 1 chiffre et 1 caractère spécial"
     }
 }
 

@@ -23,7 +23,7 @@ function increment_timer_age(obj){
 }
 
 function tempsRandomScrollor(){
-    return Math.floor(200 + Math.random() * 800)
+    return Math.floor(50 + Math.random() * 550)
 }
 
 function alternateStateScrollor(obj){

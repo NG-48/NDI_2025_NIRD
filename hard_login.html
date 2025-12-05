@@ -28,8 +28,8 @@
             </div>
             <div id="mdp_div">
                 <label for="password">Mot de passe</label>
-                <input type="text" placeholder="abCD#1234" id="password" autocomplete="off" pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{6,20}$/" minlength="6" maxlength="20"/>
-                <span id="pwdStatus" class="red">Mot de passe invalide !</span>
+                <input type="text" placeholder="abCD#1234" id="password" autocomplete="off" pattern="/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{1,2000}$/" minlength="6" maxlength="20"/>
+                <span id="pwdStatus" class="red"></span>
             </div>
             <div id="email_div">
                 <input type="text" id="email_text" placeholder="alex.durant"> @
